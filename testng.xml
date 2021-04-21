@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<listeners>
+	<listener class-name="org.sample.sel.create.MyListener"></listener>
+	<listener class-name ="org.sample.sel.create.RetryListener"></listener>
+</listeners>
+<test thread-count="5" name="JTest" junit="true">
+</test>
+  <test thread-count="5" name="Test">
+	<groups>
+	<run>
+	<include name ="Regression"/>
+	<include name ="Smoke"/>
+	<exclude name ="Sanity" />
+	</run>
+	</groups>
+      <classes>
+      <class name="org.sample.sel.create.TestSample"/>
+      <class name="org.sample.sel.create.TestSample23"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
